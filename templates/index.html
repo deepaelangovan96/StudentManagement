@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Management</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <main class="page-shell">
+        <header class="topbar">
+            <div>
+                <p class="eyebrow">COLLEGE ADMINISTRATION</p>
+                <h1>Student directory</h1>
+                <p class="subtitle">Keep academic records organized, current, and easy to find.</p>
+            </div>
+            <div class="record-count" aria-live="polite">
+                <span id="studentCount">0</span>
+                <small>students enrolled</small>
+            </div>
+        </header>
+
+        <section class="dashboard-grid">
+            <section class="panel form-panel">
+                <div class="panel-heading">
+                    <div>
+                        <p class="section-label">RECORD DETAILS</p>
+                        <h2 id="formTitle">Add a student</h2>
+                    </div>
+                    <span class="accent-mark" aria-hidden="true">+</span>
+                </div>
+                <form id="studentForm" novalidate>
+                    <input type="hidden" id="studentId">
+                    <label for="name">Full name</label>
+                    <input id="name" name="name" type="text" placeholder="e.g. Ananya Sharma" required>
+                    <div class="form-row">
+                        <div>
+                            <label for="register_number">Register number</label>
+                            <input id="register_number" name="register_number" type="text" placeholder="e.g. CS2024001" required>
+                        </div>
+                        <div>
+                            <label for="year">Year</label>
+                            <select id="year" name="year" required>
+                                <option value="">Select year</option>
+                                <option value="1">First year</option>
+                                <option value="2">Second year</option>
+                                <option value="3">Third year</option>
+                                <option value="4">Fourth year</option>
+                                <option value="5">Fifth year</option>
+                                <option value="6">Sixth year</option>
+                            </select>
+                        </div>
+                    </div>
+                    <label for="email">Email address</label>
+                    <input id="email" name="email" type="email" placeholder="student@college.edu" required>
+                    <label for="department">Department</label>
+                    <input id="department" name="department" type="text" placeholder="e.g. Computer Science" required>
+                    <p id="formMessage" class="form-message" role="alert"></p>
+                    <div class="form-actions">
+                        <button class="primary-button" type="submit" id="submitButton">Save student <span>↗</span></button>
+                        <button class="text-button hidden" type="button" id="cancelButton">Cancel</button>
+                    </div>
+                </form>
+            </section>
+
+            <section class="panel list-panel">
+                <div class="list-toolbar">
+                    <div>
+                        <p class="section-label">STUDENT RECORDS</p>
+                        <h2>All students</h2>
+                    </div>
+                    <div class="search-wrap">
+                        <span aria-hidden="true">⌕</span>
+                        <input id="searchInput" type="search" placeholder="Search records..." aria-label="Search students">
+                    </div>
+                </div>
+                <div id="statusMessage" class="status-message" role="status"></div>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr><th>Student</th><th>Register no.</th><th>Department</th><th>Year</th><th>Actions</th></tr>
+                        </thead>
+                        <tbody id="studentTableBody"></tbody>
+                    </table>
+                    <div id="emptyState" class="empty-state hidden">
+                        <span>◌</span>
+                        <h3>No students found</h3>
+                        <p>Add a student or try a different search.</p>
+                    </div>
+                </div>
+            </section>
+        </section>
+        <footer>Student Management System <span>•</span> Powered by Flask + SQLite</footer>
+    </main>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

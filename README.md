@@ -75,3 +75,12 @@ Example JSON for `POST` and `PUT`:
 ```
 
 The `year` value must be a number from 1 to 6. Register numbers and email addresses must be unique.
+Screenshots of Website
+<img width="907" height="566" alt="image" src="https://github.com/user-attachments/assets/41f8834d-d822-4674-91ac-75944932522a" />
+Screenshots of postman testing
+<img width="960" height="564" alt="Screenshot 2026-09-16 212107" src="https://github.com/user-attachments/assets/f2691330-ef36-455c-ac45-0330a7236869" />
+<img width="960" height="564" alt="Screenshot 2026-09-16 212011" src="https://github.com/user-attachments/assets/fec32f0e-91bd-4f0d-9fe7-0e120b22598b" />
+<img width="960" height="564" alt="Screenshot 2026-09-16 211936" src="https://github.com/user-attachments/assets/f4edd634-a22f-4d93-aced-9026212622c9" />
+
+
+
